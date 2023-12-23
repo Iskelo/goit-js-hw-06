@@ -1,4 +1,5 @@
 const widget = document.querySelector('.widget'),
+body = document.querySelector('body'),
 color = document.querySelector('.color'),
 changeColor = document.querySelector('.change-color');
 
@@ -7,9 +8,9 @@ changeColor.addEventListener("click", onClick);
 
 function onClick(event) {
   event.preventDefault();
-
-  widget.style.backgroundColor = getRandomHexColor();
-  color.textContent = getRandomHexColor()
+  const carrentColor = getRandomHexColor()
+  body.style.backgroundColor = carrentColor;
+  color.textContent = carrentColor;
 }
 
 function getRandomHexColor() {
